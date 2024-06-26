@@ -99,8 +99,28 @@ public class CalcTests {
         assertThat(Calc.run("(20 + 20) + 20")).isEqualTo(60);
     }
     @Test
-    @DisplayName("(20 + 20) * 20 = 800")
+    @DisplayName("((20 + 20)) + 20 = 60")
     void t19() {
-        assertThat(Calc.run("(20 + 20) * 20")).isEqualTo(800);
+        assertThat(Calc.run("((20 + 20)) + 20")).isEqualTo(60);
+    }
+    @Test
+    @DisplayName("(10 + 20) * 3 = 90")
+    void t20() {
+        assertThat(Calc.run("(10 + 20) * 3")).isEqualTo(90);
+    }
+    @Test
+    @DisplayName("10 + (10 + 5) = 25")
+    void t21() {
+        assertThat(Calc.run("10 + (10 + 5)")).isEqualTo(25);
+    }
+    @Test
+    @DisplayName("-(10 + 5) == -15")
+    void t22() {
+        assertThat(Calc.run("-(10 + 5)")).isEqualTo(-15);
+    }
+    @Test
+    @DisplayName("-(8 + 2) * -(7 + 3) + 5 == 105")
+    void t23() {
+        assertThat(Calc.run("-(8 + 2) * -(7 + 3) + 5")).isEqualTo(105);
     }
 }
